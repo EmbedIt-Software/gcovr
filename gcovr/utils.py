@@ -178,7 +178,7 @@ FilterOption.NonEmpty = NonEmptyFilterOption
 
 class Filter(object):
     def __init__(self, pattern):
-        self.pattern = re.compile(pattern)
+        self.pattern = re.compile(pattern, re.IGNORECASE)
 
     def match(self, path):
         os_independent_path = path.replace(os.path.sep, '/')
